@@ -1,0 +1,50 @@
+\documentclass{article}
+
+\usepackage[ngerman]{babel}										% Statt german, \autoref zeigt damit "Abbildung x" an
+\usepackage{graphicx}											% Graphiken einbinden
+\usepackage[left=3cm,right=3cm,top=3cm,bottom=3cm]{geometry}	% Abstände zu den Papierrändern
+\usepackage[utf8]{inputenc}										% Zeichenkodierung
+\usepackage{mathtools}											% Stellt Mathe-Umgebung bereit
+\usepackage{float}												% Improves floating elements
+\usepackage{lmodern}											% Andere Schriftart (bessere Druckbarkeit)
+\usepackage{pdfpages}											% Einbinden von PDF-Dokumenten
+\usepackage{fancyhdr}											% Fancy Headers / Footers
+\usepackage{listliketab}										% Lists with tab stops
+\usepackage{setspace}											% Anpassung von Zeilenabständen
+\usepackage{siunitx}											% Korrekte Darstellungen von Einheiten (\SI{1.5}{\milli\volt})
+\usepackage{hyperref}   										% Objekte referenzieren (\autoref)
+\usepackage{subcaption}
+\usepackage{listings}
+
+% dark mode
+%\usepackage{xcolor}			
+%\pagecolor[rgb]{0,0,0}
+%\color[rgb]{1,1,1}
+
+\setlength{\parindent}{0em}										% Keine Einrückung bei Absatzbeginn
+\setlength{\parskip}{1em}										% Dafür vert. Abstand zw. Absätzen
+
+\renewcommand{\arraystretch}{1.2}								% Verzeichnisse kompakter darstellen
+
+\newcommand{\tbf}{\textbf}										% Shortcut für fetten Text
+
+\makeatletter
+\g@addto@macro\bfseries{\boldmath}								% \mathbf nicht im Inhaltsverzeichnis darstellen
+\makeatother
+
+\pagestyle{fancy}												% Benutzung von fancyhdr
+\sisetup{
+	locale = DE,
+	per-mode=fraction,
+	fraction-function=\tfrac,
+	binary-units = true
+	}
+
+\DeclareSIUnit{\belmilliwatt}{Bm}
+\DeclareSIUnit{\dBm}{\deci\belmilliwatt}
+
+\DeclareSIUnit{\belcarrier}{Bc}
+\DeclareSIUnit{\dBc}{\deci\belcarrier}
+
+\DeclareSIUnit{\belvolt}{BV}
+\DeclareSIUnit{\dBV}{\deci\belvolt}

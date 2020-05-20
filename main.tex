@@ -1,17 +1,66 @@
-\documentclass{article}
-\usepackage[utf8]{inputenc}
+\include{header}
+\lhead{}
+\rhead{}
 
-\title{test}
-\author{loic Fernau}
-\date{May 2020}
+% anpassen!
+\chead{namedervorlesung - Praktikum 1}
+\lfoot{dd.mm.yyyy}
+\cfoot{name1, name2, name3}
+
+\rfoot{Seite \thepage}
+
+\usepackage{titlesec}
+\titlespacing\section{0pt}{12pt plus 4pt minus 2pt}{0pt plus 2pt minus 2pt}
+\titlespacing\subsection{0pt}{0pt}{0pt}
+\titlespacing\subsubsection{0pt}{12pt plus 4pt minus 2pt}{0pt plus 2pt minus 2pt}
+
 
 \begin{document}
+	% Titelseite anpassen
+	%\includepdf[pages={3}]{pdf_ext/.pdf}
 
-\maketitle
+ 	\begin{titlepage}
+ 		\begin{flushright}
+			\includegraphics[width=0.5\textwidth]{img/title.png}\\[2cm]
+		\end{flushright}
+		
+		\begin{center}
+			%\textsc{\LARGE Hochschule für angewandte Wissenschaften}\\[0.2cm]
+			%\textsc{\LARGE Hamburg}\\[1.5cm]
+			\textsc{\Large vorlesung}
+			\rule{\linewidth}{0.5mm}\\[1.5cm]
+			{ \huge \bfseries Praktikumsprotokoll}
+			\rule{\linewidth}{0.5mm}\\[2cm]
+			% Termin anpassen
+			{ \huge \bfseries thema thema thema}\\[2cm]
 
-\section{Introduction}
+			\LARGE name1 \\
+			\LARGE name2 \\[4cm]
+			% Gruppe anpassen
+			\large vorlesung-kürzel
+		\end{center}
+	\end{titlepage}
+	\newpage
+	
+	\renewcommand{\baselinestretch}{0.8}\normalsize
+	\tableofcontents
+	\listoffigures
+	\listoftables
+	\renewcommand{\baselinestretch}{1.0}\normalsize
+	
+	\newpage
 
-hi
+	\setlength{\headsep}{0.4em}
+	
+
+	\input{tex/01_einleitung}
+	\input{tex/02_aufgabe}
+	\input{tex/99_fazit}
+	
+
+
+	\newpage
+
 
 
 \end{document}
