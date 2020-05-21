@@ -1,9 +1,40 @@
 
 % grafik einbinden
-\begin{figure}[h]
+\begin{figure}[H]
     \begin{center}
         \includegraphics[width=0.8\textwidth]{path/to/file.png}
         \caption{caption}
         \label{fig:A1_label}
     \end{center}
+\end{figure}
+
+
+
+\begin{table}[ht]
+    \centering
+    \begin{tabular}{|c|c|c|c|}\hline
+    \tbf{}     & \tbf{} & \tbf{} \\ \hline
+                       &    &            \\
+                 &   &         \\ \hline
+                     &  &  \\ \hline
+    \end{tabular}
+    \caption{Beispiel Addieren:}
+\end{table}
+
+
+%comment %yes this works % yes this is good idea 
+\iffalse
+\fi
+
+%multi figure
+\begin{figure}[h]
+\begin{center}
+\subfloat[label]{\includegraphics[width = \textwidth/3]{path}}  
+\subfloat[label]{\includegraphics[width = \textwidth/3]{path}} 
+\subfloat[label]{\includegraphics[width = \textwidth/3]{path}} \\
+\subfloat[label]{\includegraphics[width = \textwidth/3]{path}} 
+\subfloat[label]{\includegraphics[width = \textwidth/3]{path}} 
+\caption{label2}
+\label{some example}
+\end{center}
 \end{figure}
