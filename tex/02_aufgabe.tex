@@ -1,16 +1,16 @@
 \section{Blockschaltbild und Automatengraph}
 
-% grafik einbinden
+Zunächst wird ein Blockschaltbild der Schaltung gezeichnet. Das Blockschaltbild wird in \autoref{fig:A1_Block} gezeigt. Die Zustandsrückführung auf das Übergangsschaltnetz ist gestrichelt eingezeichnet, da diese in dieser konkreten Implementierung nicht benötigt wird, weil die Zustandübergänge nur von den Zuständen der Eingangsignal abhängen.
+
 \begin{figure}[H]
     \begin{center}
-        \includegraphics[width=1\textwidth]{img/Blockschalt.png}
-        \caption{Blockschalt}
+        \includegraphics[width=0.9\textwidth]{img/Blockschalt1.png}
+        \caption{Blockschaltbild}
         \label{fig:A1_Block}
     \end{center}
 \end{figure}
 
 
-% grafik einbinden
 \begin{figure}[H]
     \begin{center}
         \includegraphics[width=0.6\textwidth]{img/Motortemp2.png}
@@ -19,8 +19,7 @@
     \end{center}
 \end{figure}
 
-Das Eingangstupel besteht aus dem Signal der Sensoren der Pumpen. Der Übersichtlichkeit her wurde auf dem Graph nur modelliert, dass eine pumpe ausfallen oder wieder funktionieren kann.
-Der Automat kann Zustände auch überspringen, wenn z.B. zwei Pumpen gleichzeitig ausfallen, dies wurde zwecks Übersichtlichkeit nicht eingezeichnet.\\
+Das Eingangstupel besteht aus dem Signal der Pumpen-Sensoren. Der Übersichtlichkeit halber wurde auf dem Graph nur modelliert, dass eine Pumpe ausfallen oder wieder funktionieren kann. Der Automat kann Zustände auch überspringen, wenn z.B. zwei Pumpen gleichzeitig ausfallen, dies wurde zwecks Übersichtlichkeit nicht eingezeichnet.
  
 Tupel des Automaten:
 Zustände:
@@ -47,11 +46,6 @@ Ausgabefunktion:
     C       & D     & C     & B     & A     & GE\_L + RT\_L         \\ 
     D       & D     & C     & B     & A     & RT\_L                 \\ \hline
     \end{tabular} 
-    \caption{ Automatentafel}
+    \caption{Automatentafel}
 \end{table}
-
-\newpage
-
-
-
 

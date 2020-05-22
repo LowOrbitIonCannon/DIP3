@@ -1,16 +1,17 @@
 \subsection{VHDL Code}
-%insert code here
- Die Statemachine der Motorkühlung ist in drei teile aufgeteilt, dem Zustandsspeicher ``STATE\_REGISTER'', der Übergangsfunktion ``INPUT\_LUT'' und der Ausgangsfunktion ``OUTPUT\_LUT''. Das Signal ``S'' besteht aus einem Vector mit einer drei Bit Länge, dieser steht für die Sensoren der Pumpen. Jede Pumpe gibt ein High oder Low Signal aus, je nachdem ob sie  Funktionstüchtig ist oder nicht. Da dieses Signal  asynchron ist, wird es durch zwei D-Flipflops geführt um Synchronisiert und gepuffert zu werden. Erst nach zwei Taktcyclen empfängt die Übergangsfunktion die Eingabe und setzt nächsten State im Zustandsspeicher. Daraufhin reagiert die Ausgabe Funktion und schaltet je nach zustand die LEDs ein oder aus. Durch diese drei Flipflops wird das Signal um insgesamt drei Taktcyclen verlangsamt.
- 
-\lstinputlisting[language=VHDL]{code/COOLANT_MONITOR.VHDL}
 
+\sloppy
+
+Die Statemachine der Motorkühlung ist in drei Teile aufgeteilt, dem Zustandsspeicher \glqq STATE\_REGISTER\grqq{}, der Übergangsfunktion \glqq INPUT\_LUT\grqq{} und der Ausgangsfunktion \glqq OUTPUT\_LUT\grqq{}. Das Signal \glqq S\grqq{} ein drei Bit langer Vektor. Die drei Bits repräsentieren die Sensoren der Pumpen. Jeder Sensor gibt ein High- oder Low-Signal aus, je nachdem ob die zugeordnete Pumpe funktionstüchtig ist oder nicht. Da dieses Signal asynchron ist, wird es durch zwei D-Flipflops geführt um mit dem Takt synchronisiert und gepuffert zu werden. Erst nach zwei Taktzyklen empfängt die Übergangsfunktion geänderte Eingangssignale und setzt den nächsten State im Zustandsspeicher. Daraufhin reagiert die Ausgangsfunktion und schaltet je nach zustand die LEDs ein oder aus. Durch diese drei Flipflops wird das Signal um insgesamt drei Taktzyklen verlangsamt.
+ 
+\lstinputlisting[language=VHDL]{code/COOLANT_MONITORING.VHDL}
 
 \subsection{Simulation}
-%insert sim here
-Modelsim .do Datei:
-\lstinputlisting[language=Verilog]{code/test.do}
 
-% grafik einbinden
+Modelsim .do Datei:
+
+\lstinputlisting[language=tcl]{code/test.do}
+
 \begin{figure}[H]
     \begin{center}
         \includegraphics[width=1\textwidth]{img/dip3_sim.png}
@@ -20,5 +21,5 @@ Modelsim .do Datei:
 \end{figure}
 
 \subsection{Auswertung}
-Die Startbedingung wird durch den Reset Eingang erfüllt, beim Start des Automat ist der Resetpin auf eins und setzt den Start state $Q_0$ auf ``INIT'' um einen definierten zustand zu erhalten und die Lampen leuchten alle auf. Nach drei Taktzyklen sind die Eingangsinformation am Ausgang, also den Lampen, sichtbar. Da alle Pumpen am Anfang auf Low sind ist der Automat in Zustand D, es Leuchtet die Rote Lampe. Nach 6 Taktzyklen wird simuliert, dass alle Pumpen korrekt laufen also der Eingang drei High Bits empfängt. Die Schaltung reagiert darauf durch wechseln in den Zustand A, nur die Grüne Lampe Leuchtet da alle Pumpen laufen. Im folgenden wird mit einem Abstand von 6 Taktzyklen simuliert, das jede Pumpe nach einander ausfällt. An den Signalen der Flip Flops ist gut die Verzögerung die jedes Flipflop hinzufügt zu erkennen: FF $S_{INT}$, FF $S_{BUFFER}$ und FF State.
+Die Startbedingung wird durch den Reset-Eingang erfüllt, beim Start des Automat ist der Resetpin auf eins und setzt den Zustand $Q_0$ auf \glqq INIT\grqq{} um einen definierten Zustand zu erhalten. In diesem Zustand leuchten die Lampen alle auf. Nach drei Taktzyklen sind die Eingangsinformation am Ausgang, also den Lampen, sichtbar. Da alle Pumpen am Anfang auf Low sind, ist der Automat in Zustand D, es Leuchtet die rote Lampe. Nach 6 Taktzyklen wird simuliert, dass alle Pumpen korrekt laufen, also der Eingang drei High-Bits empfängt. Die Schaltung reagiert darauf durch wechseln in den Zustand A, nur die grüne Lampe leuchtet, da alle Pumpen laufen. Im folgenden wird mit einem Abstand von 6 Taktzyklen simuliert, das jede Pumpe nacheinander ausfällt. An den Signalen der Flipflops ist gut die Verzögerung die jedes Flipflop hinzufügt zu erkennen: FF $S_{INT}$, FF $S_{BUFFER}$ und FF State.
 

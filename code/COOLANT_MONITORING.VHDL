@@ -1,5 +1,5 @@
--- VHDL DI P3 Aufgabe Überwachung der Motorkühlung mittels Moore-Automat und Metastabilitaet
--- Funktion:  Motorkühlungsüberwachung
+-- VHDL DI P3 Aufgabe Ueberwachung der Motorkuehlung mittels Moore-Automat und Metastabilitaet
+-- Funktion:  Motorkuehlungsueberwachung
 -- Autor:  Loic Fernau & Niklas Bamman
 -- Datum:   13.05.2020
 
@@ -78,7 +78,7 @@ begin
 		end case;
 	end process OUTPUT_LUT;
 
-	-- Ausgänge zuweisen
+	-- Ausgaenge zuweisen
 	OUTPUT: process(LED)
 	begin
 		RT_L <= LED(0);
