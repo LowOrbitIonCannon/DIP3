@@ -13,11 +13,15 @@
 % grafik einbinden
 \begin{figure}[H]
     \begin{center}
-        \includegraphics[width=0.8\textwidth]{img/Motortemp.png}
+        \includegraphics[width=1\textwidth]{img/Motortemp2.png}
         \caption{Automatengraph}
         \label{fig:A1_Auto}
     \end{center}
 \end{figure}
+
+Das Eingangstupel besteht aus dem Signal der Sensoren der Pumpen. Der Übersichtlichkeit her wurde auf dem Graph nur modelliert, dass eine pumpe ausfallen oder wieder funktionieren kann.
+Der Automat kann Zustände auch überspringen, wenn z.B. zwei Pumpen gleichzeitig ausfallen, dies wurde zwecks Übersichtlichkeit nicht eingezeichnet.\\
+ 
 Tupel des Automaten:
 Zustände:
 \[Q =\{Init, A, B, C, D\}  \]
@@ -32,8 +36,8 @@ Ausgabefunktion:
 \[  \lambda:GE\_L \Rightarrow 0 < \Sigma <= 2  \]
 \[  \lambda:RT\_L \Rightarrow  \Sigma <= 1  \]\\
 
- Automaten Tafel:\\
- \begin{table}[ht]
+
+ \begin{table}[H]
     \centering
     \begin{tabular}{|c|c|c|c|c|c|c|}\hline
     \tbf{$\delta$ (Übergang) $\searrow$} & \tbf{$\Sigma= 0$} & \tbf{$\Sigma= 1$}  & \tbf{$\Sigma= 2$} & \tbf{$\Sigma= 3$} & \tbf{$\Delta$ (Ausgabe)} \\ \hline
@@ -43,18 +47,11 @@ Ausgabefunktion:
     C       & D     & C     & B     & A     & GE\_L + RT\_L         \\ 
     D       & D     & C     & B     & A     & RT\_L                 \\ \hline
     \end{tabular} 
-    \caption{Beispiel Addieren:}
+    \caption{ Automatentafel}
 \end{table}
 
+\newpage
 
 
-Das Eingangstupel besteht aus dem Signal der Sensoren der Pumpen. Der Übersichtlichkeit her wurde auf dem Graph nur modelliert, dass eine pumpe ausfallen oder wieder funktionieren kann. \(\Sigma =\{-1,+1\} \)
- Der Automat kann Zustände auch überspringen, wenn z.B. zwei pumpen gleichzeitig ausfallen, dies wurde zwecks Übersichtlichkeit nicht eingezeichnet.\\
- 
 
 
-\subsection{Aufbau}
-
-\subsection{Durchführung}
-
-\subsection{Auswertung}
